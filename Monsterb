@@ -1,0 +1,322 @@
+local shut = game.Players.LocalPlayer.PlayerGui.MainUI.MainFrame.IntroText
+local intro = shut:Clone()
+intro.Parent = game.Players.LocalPlayer.PlayerGui.MainUI
+intro.Name = "IntroTextPleaseThankYou"
+intro.Visible = true
+intro.Text = "The Monster"
+intro.TextTransparency = 0
+local underline = UDim2.new(1.1, 0, 0.015, 6)
+game.TweenService:Create(intro.Underline, TweenInfo.new(3), {Size = underline}):Play()
+wait(7)
+game.TweenService:Create(intro.Underline, TweenInfo.new(1.3), {Size = UDim2.new(0.95, 0, 0.015, 6)}):Play()
+wait(1)
+game.TweenService:Create(intro.Underline, TweenInfo.new(2), {ImageTransparency = 1}):Play()
+game.TweenService:Create(intro, TweenInfo.new(2), {TextTransparency = 1}):Play()
+game.TweenService:Create(intro.Underline, TweenInfo.new(7), {Size = UDim2.new(0, 0, 0.015, 6)}):Play()
+wait(2.3)
+intro.Visible = false
+wait(9)
+intro:Destroy()
+wait(2)
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V1/Source.lua"))()
+
+---====== Create entity ======---
+
+local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://6185097708"
+	sound.Looped = false
+	sound.Parent = workspace
+	sound.Volume = 2
+	sound:Play()
+local Lighting = game:GetService("Lighting")
+wait()
+Lighting.Ambient = Color3.new(1, 1, 1)
+Lighting.Brightness = 0.1
+Lighting.FogEnd = 1000
+Lighting.FogColor = Color3.new(1, 1, 1)
+
+local entity = Spawner.createEntity({
+    CustomName = "A-200",
+    Model = "rbxassetid://15208369338", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
+    Speed = 30,
+    MoveDelay = 0,
+    HeightOffset = 0,
+    CanKill = true,
+    KillRange = 20,
+    SpawnInFront = true,
+    ShatterLights = false,
+    FlickerLights = {
+        Enabled = false,
+        Duration = 3
+    },
+    Cycles = {
+        Min = 1,
+        Max = 1,
+        Delay = 0
+    },
+    CamShake = {
+        Enabled = true,
+        Values = {1.5, 20, 0.1, 1},
+        Range = 100
+    },
+    ResistCrucifix = true,
+    BreakCrucifix = true,
+    DeathMessage = {"you die to A-10", "yee."},
+    IsCuriousLight = true
+})
+
+---====== Debug ======---
+
+entity.Debug.OnEntitySpawned = function()
+end
+entity.Debug.OnEntityDespawned = function()
+local function GetGitSound(GithubSnd,SoundName)
+				local url=GithubSnd
+				if not isfile(SoundName..".mp3") then
+					writefile(SoundName..".mp3", game:HttpGet(url))
+				end
+				local sound=Instance.new("Sound")
+				sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+				return sound
+			end
+			 local ins = GetGitSound("https://github.com/huyhoangphuc/door/blob/main/A-200%20Despawn%20Sound.ogg?raw=trur","ins")
+				ins.Parent = workspace
+				ins.Volume = 5
+				ins:Play()
+				wait(0.1)
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V1/Source.lua"))()
+
+---====== Create entity ======---
+
+
+local entity = Spawner.createEntity({
+    CustomName = "A-200",
+    Model = "rbxassetid://15208369338", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
+    Speed = 1000000,
+    MoveDelay = 0,
+    HeightOffset = 0,
+    CanKill = true,
+    KillRange = 10000,
+    SpawnInFront = true,
+    ShatterLights = false,
+    FlickerLights = {
+        Enabled = false,
+        Duration = 3
+    },
+    Cycles = {
+        Min = 3,
+        Max = 3,
+        Delay = 0
+    },
+    CamShake = {
+        Enabled = false,
+        Values = {1.5, 20, 0.1, 1},
+        Range = 100
+    },
+    ResistCrucifix = true,
+    BreakCrucifix = true,
+    DeathMessage = {"you die to A-10", "yee."},
+    IsCuriousLight = true
+})
+
+---====== Debug ======---
+
+entity.Debug.OnEntitySpawned = function()
+end
+
+entity.Debug.OnEntityDespawned = function()
+local function GetGitSound(GithubSnd,SoundName)
+				local url=GithubSnd
+				if not isfile(SoundName..".mp3") then
+					writefile(SoundName..".mp3", game:HttpGet(url))
+				end
+				local sound=Instance.new("Sound")
+				sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+				return sound
+			end
+			 local ins = GetGitSound("https://github.com/huyhoangphuc/door/blob/main/A-200%20Despawn%20Sound.ogg?raw=trur","ins")
+				ins.Parent = workspace
+				ins.Volume = 5
+				ins:Play()
+    local Lighting = game:GetService("Lighting")
+wait()
+Lighting.Ambient = Color3.new(0, 0, 0)
+Lighting.Brightness = 0.1
+Lighting.FogEnd = 87
+Lighting.FogColor = Color3.new(0, 0, 0)
+local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+ 
+---====== Display achievement ======---
+achievementGiver({
+    Title = "[Teast Are InsidÄ‚â€Ă¢â‚¬ÂÄ‚â€Ă‚Â¦]",
+    Desc = "we will come back",
+    Reason = "Encounter A-200",
+    Image = "rbxassetid://537141778"
+})
+end
+entity.Debug.OnEntityStartMoving = function()
+    print("Entity started moving")
+end
+
+entity.Debug.OnEntityFinishedRebound = function()
+    print("Entity finished rebound")
+end
+
+entity.Debug.OnEntityEnteredRoom = function(room)
+    print("Entity entered room:", room)
+end
+
+entity.Debug.OnLookAtEntity = function()
+    print("Player looking at entity")
+end
+
+entity.Debug.OnDeath = function()
+    local Lighting = game:GetService("Lighting")
+wait()
+local function GetGitSound(GithubSnd,SoundName)
+				local url=GithubSnd
+				if not isfile(SoundName..".mp3") then
+					writefile(SoundName..".mp3", game:HttpGet(url))
+				end
+				local sound=Instance.new("Sound")
+				sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+				return sound
+			end
+			 local ins = GetGitSound("https://github.com/huyhoangphuc/door/blob/main/km_20240808_720p_12f_20240808_005218.ogg?raw=true","insi")
+				insi.Parent = workspace
+				insi.Volume = 1
+				insi:Play()
+Lighting.Ambient = Color3.new(0, 0, 0)
+Lighting.Brightness = 0.1
+Lighting.FogEnd = 0
+Lighting.FogColor = Color3.new(0, 0, 0)
+wait(0.3)
+local Lighting = game:GetService("Lighting")
+wait()
+Lighting.Ambient = Color3.new(0, 0, 0)
+Lighting.Brightness = 0.1
+Lighting.FogEnd = 87
+Lighting.FogColor = Color3.new(0, 0, 0)
+wait()
+local func, setupval, getinfo, typeof, getgc, next = nil, debug.setupvalue or setupvalue, debug.getinfo or getinfo, typeof, getgc, next
+ 
+for i,v in next, getgc(false) do
+    if typeof(v) == "function" then
+        local info = getinfo(v)
+        if info.currentline == 54 and info.nups == 2 and info.is_vararg == 0 then
+            func = v
+            break
+        end
+    end
+end
+ 
+local function DeathHint(hints, type: string)
+    setupval(func, 1, hints)
+    if type ~= nil then
+        setupval(func, 2, type)
+    end
+end
+ 
+DeathHint({
+    "You died to A-200",
+    "A-200 will appear with an explosion effect",
+    "You can get close to it, but you can go into the room to check it out",
+    "The best thing is not to hide in the room, hide in the closet to safely get through it A-200",
+}, "Yellow") -- "Blue" or "Yellow"    
+end
+
+--[[
+    NOTE: By overwriting 'OnUseCrucifix', the default crucifixion will be ignored and this function will be called instead
+
+    entity.Debug.OnUseCrucifix = function()
+        print("Custom crucifixion script here")
+    end
+]]--
+
+---====== Run entity ======---
+
+Spawner.runEntity(entity)		
+end
+
+entity.Debug.OnEntityStartMoving = function()
+    print("Entity started moving")
+end
+
+entity.Debug.OnEntityFinishedRebound = function()
+    print("Entity finished rebound")
+end
+
+entity.Debug.OnEntityEnteredRoom = function(room)
+    print("Entity entered room:", room)
+end
+
+entity.Debug.OnLookAtEntity = function()
+    print("Player looking at entity")
+end
+
+entity.Debug.OnDeath = function()
+    local Lighting = game:GetService("Lighting")
+wait()
+local function GetGitSound(GithubSnd,SoundName)
+				local url=GithubSnd
+				if not isfile(SoundName..".mp3") then
+					writefile(SoundName..".mp3", game:HttpGet(url))
+				end
+				local sound=Instance.new("Sound")
+				sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+				return sound
+			end
+			 local ins = GetGitSound("https://github.com/huyhoangphuc/door/blob/main/km_20240808_720p_12f_20240808_005218.ogg?raw=true","insi")
+				insi.Parent = workspace
+				insi.Volume = 1
+				insi:Play()
+Lighting.Ambient = Color3.new(0, 0, 0)
+Lighting.Brightness = 0.1
+Lighting.FogEnd = 0
+Lighting.FogColor = Color3.new(0, 0, 0)
+wait(0.3)
+local Lighting = game:GetService("Lighting")
+wait()
+Lighting.Ambient = Color3.new(0, 0, 0)
+Lighting.Brightness = 0.1
+Lighting.FogEnd = 87
+Lighting.FogColor = Color3.new(0, 0, 0)
+wait()
+local func, setupval, getinfo, typeof, getgc, next = nil, debug.setupvalue or setupvalue, debug.getinfo or getinfo, typeof, getgc, next
+ 
+for i,v in next, getgc(false) do
+    if typeof(v) == "function" then
+        local info = getinfo(v)
+        if info.currentline == 54 and info.nups == 2 and info.is_vararg == 0 then
+            func = v
+            break
+        end
+    end
+end
+ 
+local function DeathHint(hints, type: string)
+    setupval(func, 1, hints)
+    if type ~= nil then
+        setupval(func, 2, type)
+    end
+end
+ 
+DeathHint({
+    "You died to A-200",
+    "A-200 will appear with an explosion effect",
+    "You can get close to it, but you can go into the room to check it out",
+    "The best thing is not to hide in the room, hide in the closet to safely get through it A-200",
+}, "Yellow") -- "Blue" or "Yellow"    
+end
+
+--[[
+    NOTE: By overwriting 'OnUseCrucifix', the default crucifixion will be ignored and this function will be called instead
+
+    entity.Debug.OnUseCrucifix = function()
+        print("Custom crucifixion script here")
+    end
+]]--
+
+---====== Run entity ======---
+
+Spawner.runEntity(entity)
