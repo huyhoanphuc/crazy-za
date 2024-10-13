@@ -93,19 +93,6 @@ end
 entity.Debug.OnEntityStartMoving = function()
     print("Entity has started moving:")
     game.workspace.Asitsitsit.RushNew.Anchored = true
-    wait()
-    game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
-wait()
-game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
-wait()
-game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
-wait()
-game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
-wait()
-game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
-wait()
-game.workspace.Asitsitsit:Destroy()
-wait()
 end
 
 entity.Debug.OnEntityFinishedRebound = function()
@@ -186,7 +173,7 @@ eq.Parent = scare
     scare:Play()
     task.wait(0.7)
     JumpscareGui:Destroy()
-    firesignal(game.ReplicatedStorage.RemotesFolder.DeathHint.OnClientEvent, {"You die to A-666."}, "Blue")
+firesignal(game.ReplicatedStorage.RemotesFolder.DeathHint.OnClientEvent, {"Hello Player."}, "Blue")
 
 wait(2)
 
@@ -201,36 +188,6 @@ for i, v in pairs(game.Workspace.Camera.DeathBackgroundBlue:GetDescendants()) do
         v.Color = Color3.fromRGB(239, 139, 139)
     end
 end
-    end
-end
-
-local function check()
-while true do wait()
-    local direction = (entity.PrimaryPart.Position - cam.CFrame.Position).unit
-    local dot_product = direction:Dot(cam.CFrame.LookVector)
-    return dot_product > 0.1
-    end
-end
-
-local function move(target, dur)
-    local tween_info = TweenInfo.new(dur, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-    local tween = TweenService:Create(entity.PrimaryPart, tween_info, {CFrame = target})
-    tween:Play()
-    tween.Completed:Wait()
-end
-
-entity.PrimaryPart.Anchored = false
-wait(1.5)
-
-if check() then
-    move(chr.HumanoidRootPart.CFrame, 126)
-    damageblud()
-end
-
-local fallframe = entity.PrimaryPart.CFrame * CFrame.new(0, -100, 0)
-local falldur = 2
-
-move(fallframe, falldur)
 end
 
 ------------------------
